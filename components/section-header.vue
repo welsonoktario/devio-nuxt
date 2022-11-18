@@ -1,0 +1,29 @@
+<script setup lang="ts">
+type SectionHeaderProps = {
+  title: string;
+  description: string;
+};
+
+defineProps<SectionHeaderProps>();
+</script>
+
+<template>
+  <div class="section-header">
+    <h2 class="section-title">{{ title ?? "Title here" }}</h2>
+    <p class="section-description">{{ description ?? "" }}</p>
+  </div>
+</template>
+
+<style scoped>
+.section-header {
+  @apply flex w-full flex-col items-center justify-center bg-transparent pt-12 pb-10 font-medium md:space-y-4 md:pt-20 md:pb-20;
+}
+
+.section-header .section-title {
+  @apply w-10/12 text-center text-4xl text-primary md:w-3/6 md:text-5xl lg:w-[35%] lg:leading-tight;
+}
+
+.section-header .section-description {
+  @apply w-5/6 text-center text-xl font-light text-primary md:mt-6 md:w-[56%] md:text-2xl md:leading-normal;
+}
+</style>
